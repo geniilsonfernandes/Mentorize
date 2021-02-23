@@ -194,6 +194,9 @@ body {
   .main__nav {
     display: none;
   }
+  .cover__right img {
+    width: 100%;
+  }
 }
 
 .search {
@@ -310,6 +313,7 @@ body {
 
 .cards__section {
   position: relative;
+  overflow: hidden;
 }
 
 .cards__tittle {
@@ -341,6 +345,15 @@ body {
 
 .card__boxes {
   position: relative;
+}
+
+.card__slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: all cubic-bezier(0.7, 0.23, 0.27, 1.06) 200ms;
+  transition: all cubic-bezier(0.7, 0.23, 0.27, 1.06) 200ms;
+  overflow-x: auto;
 }
 
 .card {
@@ -399,6 +412,11 @@ body {
   background: #F1EDED;
 }
 
+.card button:focus {
+  outline: none;
+  background: #F1EDED;
+}
+
 .card button img {
   margin-left: 20px;
 }
@@ -435,6 +453,10 @@ body {
 }
 
 .cards__btn .btn__back:hover, .cards__btn .btn__next:hover {
+  background: #BCE9E2;
+}
+
+.cards__btn .btn__back:focus, .cards__btn .btn__next:focus {
   background: #BCE9E2;
 }
 /*# sourceMappingURL=main.css.map */

@@ -6,6 +6,7 @@ $btn__hover: #09a78f;
 
 .cards__section{
     position: relative;
+    overflow: hidden;
 }
 
 .cards__tittle {
@@ -36,7 +37,11 @@ $btn__hover: #09a78f;
 .card__boxes{
     position: relative;
 }
-
+.card__slider{
+    display: flex;
+    transition: all cubic-bezier(0.7, 0.23, 0.27, 1.06) 200ms;
+    overflow-x: auto;
+}
 .card{
     
     max-width: 280px;
@@ -80,6 +85,10 @@ $btn__hover: #09a78f;
         &:hover{
             background: #F1EDED;
         }
+        &:focus{
+            outline: none;
+            background: #F1EDED;
+        }
         img{
             margin-left:20px;
         }
@@ -103,6 +112,9 @@ $btn__hover: #09a78f;
         border: 1px solid $second__color;
         transition: all ease-in-out 200ms;
         &:hover{
+            background: #BCE9E2;
+        }
+        &:focus{
             background: #BCE9E2;
         }
     }

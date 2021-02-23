@@ -11,7 +11,8 @@
    <link rel="preconnect" href="https://fonts.gstatic.com">
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet">
-   <link rel="stylesheet" href="css/glider.css">
+   <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+   <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
    <link rel="stylesheet" href="css/main.css">
 
 </head>
@@ -90,7 +91,7 @@
          </div>
       </div>
       <div class="card__boxes mwfix ">
-         <div class="slider">
+         <div class="card__slider">
             <div class="card">
                <div class="card__icon">
                   <!--  -->
@@ -213,34 +214,10 @@
 
 
 
-   <script src="js/glider.js"> </script>
-   <script src="js/app.js"> </script>
-   <script>
-      window._ = new Glider(document.querySelector('.slider'), {
-         slidesToShow: 4, //'auto',
-         slidesToScroll: 1,
-         exactWidth: false,
-         draggable: true,
-         scrollLock: true,
-         dots: '#dots',
-         arrows: {
-            prev: '.btn__back ',
-            next: '.btn__next'
-         },
-         responsive: [
-            {
-               // screens greater than >= 775px
-               breakpoint: 500,
-               settings: {
-                  // Set to `auto` and provide item width to adjust to viewport
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-                  duration: 0.25
-               }
-            }, 
-         ]
-      });
-   </script>
+   <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+   <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+   <script type="module" src="js/app.js"> </script>
+   
 </body>
 
 </html>
