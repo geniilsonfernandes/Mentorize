@@ -11,6 +11,7 @@
    <link rel="preconnect" href="https://fonts.gstatic.com">
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet">
+   <link rel="stylesheet" href="css/glider.css">
    <link rel="stylesheet" href="css/main.css">
 
 </head>
@@ -52,21 +53,21 @@
             </div>
          </div>
          <div class="cover__right">
-            <div class="">
-               <img src="./assets/img/cover__home.png" alt="imagem de capa">
-            </div>
+
+            <img src="./assets/img/cover__home.png" alt="imagem de capa">
+
          </div>
       </div>
    </header>
    <section class="search__section">
       <div class="search mwfix">
          <div class="search__input">
-            <div class="input">
-               <div class="input__style">
-                  <label for="">Encontre um especialista para ajuda-lo em:</label>
-                  <input type="text" placeholder="Power Bi">
-               </div>
+
+            <div class="input__style">
+               <label for="">Encontre um especialista para ajuda-lo em:</label>
+               <input type="text" placeholder="Power Bi">
             </div>
+
             <div class="input__btn">
                <button>
                   Buscar <img src="./assets/svg/loupe.svg" alt="">
@@ -87,12 +88,105 @@
                profissionais através de:
             </p>
          </div>
-         <div class="card__boxes">
+      </div>
+      <div class="card__boxes mwfix ">
+         <div class="slider">
             <div class="card">
                <div class="card__icon">
                   <!--  -->
                </div>
-               <h3>Front End</h3>
+               <h3>1 Front End</h3>
+               <p>
+                  Existimos para contribuir com o
+                  desenvolvimento de pessoas e carreiras.
+               </p>
+               <button>
+                  Buscar <img src="./assets/svg/loupe__color.svg" alt="">
+               </button>
+            </div>
+            <div class="card">
+               <div class="card__icon">
+                  <!--  -->
+               </div>
+               <h3>2 Front End</h3>
+               <p>
+                  Existimos para contribuir com o
+                  desenvolvimento de pessoas e carreiras.
+               </p>
+               <button>
+                  Buscar <img src="./assets/svg/loupe__color.svg" alt="">
+               </button>
+            </div>
+            <div class="card">
+               <div class="card__icon">
+                  <!--  -->
+               </div>
+               <h3>3 Front End</h3>
+               <p>
+                  Existimos para contribuir com o
+                  desenvolvimento de pessoas e carreiras.
+               </p>
+               <button>
+                  Buscar <img src="./assets/svg/loupe__color.svg" alt="">
+               </button>
+            </div>
+            <div class="card">
+               <div class="card__icon">
+                  <!--  -->
+               </div>
+               <h3>4 Front End</h3>
+               <p>
+                  Existimos para contribuir com o
+                  desenvolvimento de pessoas e carreiras.
+               </p>
+               <button>
+                  Buscar <img src="./assets/svg/loupe__color.svg" alt="">
+               </button>
+            </div>
+            <div class="card">
+               <div class="card__icon">
+                  <!--  -->
+               </div>
+               <h3>5 Front End</h3>
+               <p>
+                  Existimos para contribuir com o
+                  desenvolvimento de pessoas e carreiras.
+               </p>
+               <button>
+                  Buscar <img src="./assets/svg/loupe__color.svg" alt="">
+               </button>
+            </div>
+            <div class="card">
+               <div class="card__icon">
+                  <!--  -->
+               </div>
+               <h3>6 Front End</h3>
+               <p>
+                  Existimos para contribuir com o
+                  desenvolvimento de pessoas e carreiras.
+               </p>
+               <button>
+                  Buscar <img src="./assets/svg/loupe__color.svg" alt="">
+               </button>
+            </div>
+            <div class="card">
+               <div class="card__icon">
+                  <!--  -->
+               </div>
+               <h3>7 Front End</h3>
+               <p>
+                  Existimos para contribuir com o
+                  desenvolvimento de pessoas e carreiras.
+               </p>
+               <button>
+                  Buscar <img src="./assets/svg/loupe__color.svg" alt="">
+               </button>
+            </div>
+            <div class="card">
+               <div class="card__icon">
+                  <!--  -->
+               </div>
+               <h3>8 Front End</h3>
                <p>
                   Existimos para contribuir com o
                   desenvolvimento de pessoas e carreiras.
@@ -102,21 +196,51 @@
                </button>
             </div>
          </div>
+
          <div class="cards__btn">
-            <div class="btn__back">
+            <button class="btn__back">
                <img src="./assets/svg/back.svg" alt="">
-            </div>
-            <div class="btn__next">
+            </button>
+            <button class="btn__next">
                <img src="./assets/svg/next.svg" alt="">
-            </div>
+            </button>
          </div>
       </div>
+
+
    </section>
 
 
 
 
+   <script src="js/glider.js"> </script>
    <script src="js/app.js"> </script>
+   <script>
+      window._ = new Glider(document.querySelector('.slider'), {
+         slidesToShow: 4, //'auto',
+         slidesToScroll: 1,
+         exactWidth: false,
+         draggable: true,
+         scrollLock: true,
+         dots: '#dots',
+         arrows: {
+            prev: '.btn__back ',
+            next: '.btn__next'
+         },
+         responsive: [
+            {
+               // screens greater than >= 775px
+               breakpoint: 500,
+               settings: {
+                  // Set to `auto` and provide item width to adjust to viewport
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  duration: 0.25
+               }
+            }, 
+         ]
+      });
+   </script>
 </body>
 
 </html>

@@ -111,3 +111,15 @@ $btn__hover: #09a78f;
     background: $btn__hover;
   }
 }
+
+@media screen and (max-width: 746px) {
+	.header__cover {
+    flex-direction: column;
+  }
+  .cover__info{
+    text-align: center;
+  }
+  .main__nav {
+    display: none;
+  }
+}

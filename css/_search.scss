@@ -61,3 +61,20 @@ $btn__hover: #09a78f;
     }
   }
 }
+
+@media screen and (max-width: 746px) {
+  .search__input {
+    width: 95%;
+    padding: 16px;
+    flex-direction: column;
+    .input__style {
+      width: 100%;
+    }
+    .input__btn {
+      margin-top: 32px;
+      button {
+        width: 300px;
+      }
+    }
+  }
+}

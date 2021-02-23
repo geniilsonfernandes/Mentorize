@@ -4,6 +4,10 @@ $text__colorPrimary: #5a7681;
 $text__colorSecond: #353a3e;
 $btn__hover: #09a78f;
 
+.cards__section{
+    position: relative;
+}
+
 .cards__tittle {
   margin-top: 72px;
   h1 {
@@ -29,9 +33,16 @@ $btn__hover: #09a78f;
 }
 
 
+.card__boxes{
+    position: relative;
+}
+
 .card{
-    width: 280px;
+    
+    max-width: 280px;
+    min-width: 280px;
     padding: 28px;
+    margin-right: 50PX;
     background: #fff;
     box-shadow: 0px 17px 35px rgba(222, 229, 231, 0.25);
     .card__icon{
@@ -76,12 +87,14 @@ $btn__hover: #09a78f;
     }
 }
 .cards__btn {
-    cursor: pointer;
+    position: relative;
     margin-top: 36px;
     display: flex;
     justify-content: space-between;
     width: 130px;
     .btn__back,.btn__next{
+        cursor: pointer;
+        background: transparent;
         display: flex;
         justify-content: center;
         align-items: center;
