@@ -16,6 +16,7 @@ $btn__hover: #09a78f;
 }
 .main__nav {
   display: flex;
+  flex-flow: wrap;
   justify-content: space-between;
   align-items: center;
   padding-top: 48px;
@@ -23,6 +24,7 @@ $btn__hover: #09a78f;
 
 .nav__menu__links {
   display: flex;
+  
   align-items: center;
   ul {
     list-style: none;
@@ -112,15 +114,58 @@ $btn__hover: #09a78f;
   }
 }
 
-@media screen and (max-width: 746px) {
+.nav__burgue {
+  display: none;
+}
+@media screen and (max-width: 840px) {
 	.header__cover {
     flex-direction: column;
   }
   .cover__info{
     text-align: center;
   }
-  .main__nav {
-    display: none;
+  .nav__burgue {
+    cursor: pointer;
+    display: block;
+  }
+  .nav__menu {
+    display: block;
+    position: absolute;
+    top: -300px;
+    width: 90%;
+    background: #fff;
+    padding: 16px;
+    margin: 0 auto;
+    transition: all ease-in-out 300ms;
+  }
+  .nav__menu__links {
+    flex-flow: wrap;
+    margin-left:0;
+    margin-bottom: 16px;
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+
+      li {
+        padding: 16px 16px;
+        margin: 0;
+        &:last-child{
+          margin-bottom: 16px;
+        }
+        a {
+          text-decoration: none;
+          font-size: 16px;
+          color: $text__colorPrimary;
+        }
+      }
+    }
+  }
+  .nav__menu__btn{
+    
+    margin: 0 auto;
   }
   .cover__right{
     img{
@@ -129,3 +174,10 @@ $btn__hover: #09a78f;
   }
   
 }
+
+.active{
+  transition: all ease-in-out 300ms;
+  top: 95px;
+  display: block;
+}
+

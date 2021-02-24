@@ -7,6 +7,7 @@ $btn__hover: #09a78f;
 .cards__section{
     position: relative;
     overflow: hidden;
+    padding-bottom: 100px;
 }
 
 .cards__tittle {
@@ -39,15 +40,15 @@ $btn__hover: #09a78f;
 }
 .card__slider{
     display: flex;
-    transition: all cubic-bezier(0.7, 0.23, 0.27, 1.06) 200ms;
-    overflow-x: auto;
+    transition: all cubic-bezier(0.7, 0.23, 0.27, 1.06) 500ms;
+    cursor: pointer;
+    
 }
 .card{
-    
+    user-select: none;
     max-width: 280px;
     min-width: 280px;
     padding: 28px;
-    margin-right: 50PX;
     background: #fff;
     box-shadow: 0px 17px 35px rgba(222, 229, 231, 0.25);
     .card__icon{
