@@ -218,10 +218,50 @@
 
 
 
-   <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+
+
+
+
+   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+   <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
    <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
-   <script src="js/app.js"> </script>
-   
+
+   <script>
+
+
+      $('.card__slider').slick({
+         infinite: false,
+         slidesToShow: 4,
+         slidesToScroll: 3,
+         responsive: [
+    {
+      breakpoint: 1060,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ],
+         prevArrow:$('.btn__back'),
+         nextArrow:$('.btn__next'),   
+      })
+   </script>
+   <!-- <script src="js/app.js"> </script> -->
+
 </body>
 
 </html>
