@@ -10,11 +10,6 @@ btnMenuEl.addEventListener("click", () => {
   menuMobileEl.classList.toggle("active");
 });
 
-
-
-
-
-
 ///carrousel
 
 const sliderEl = document.querySelector(".card__slider");
@@ -24,44 +19,52 @@ const sliderBtn = [
   document.querySelector(".btn__next"),
 ];
 
-
-
-window.addEventListener("load", ()=>{
-    if (window.innerWidth < 550) {
-        sliderEl.style.overflow = 'auto'
-    }
+let sliderShow;
+let sliderWidth;
+let moveReal = 0;
+let movetoLeft = 0;
+const resize = () => {
+  if (window.innerWidth < 550) {
+    movetoLeft = 0;
+    moveReal = 0;
+    sliderShow = 1;
+    sliderWidth =
+      (sliderCardEl.length - sliderShow) * sliderCardEl[0].clientWidth;
+  }
+  if (window.innerWidth > 550 && window.innerWidth < 1020) {
+    movetoLeft = 0;
+    moveReal = 0;
+    sliderShow = 1;
+    sliderWidth =
+      (sliderCardEl.length - sliderShow) * sliderCardEl[0].clientWidth;
+  }
+  if (window.innerWidth > 1020 && window.innerWidth < 1200) {
+    movetoLeft = 0;
+    moveReal = 0;
+    sliderShow = 2;
+    sliderWidth =
+      (sliderCardEl.length - sliderShow) * sliderCardEl[0].clientWidth;
+  }
+  if (window.innerWidth > 1200 && window.innerWidth < 1400) {
+    movetoLeft = 0;
+    moveReal = 0;
+    sliderShow = 3;
+    sliderWidth =
+      (sliderCardEl.length - sliderShow) * sliderCardEl[0].clientWidth;
+  }
+  if (window.innerWidth > 1400 && window.innerWidth < 2400) {
+    moveReal = 0;
+    sliderShow = 4;
+    sliderWidth =
+      (sliderCardEl.length - sliderShow) * sliderCardEl[0].clientWidth;
+  }
+};
+window.addEventListener("load", () => {
+  resize();
 });
-
-let sliderShow ;
-let sliderWidth ;
-const resize = ()=>{
-    if (window.innerWidth < 550) {
-        sliderShow = 1;
-        sliderWidth = (sliderCardEl.length - sliderShow ) * sliderCardEl[0].clientWidth;
-    }
-    if (window.innerWidth > 550 && window.innerWidth < 1020 ) {
-        sliderShow = 2;
-        sliderWidth = (sliderCardEl.length - sliderShow ) * sliderCardEl[0].clientWidth;
-    }
-    if (window.innerWidth > 1020 && window.innerWidth < 1200 ) {
-        sliderShow = 2;
-        sliderWidth = (sliderCardEl.length - sliderShow ) * sliderCardEl[0].clientWidth;
-    }
-    if (window.innerWidth > 1200 && window.innerWidth < 1400 ) {
-        sliderShow = 3;
-        sliderWidth = (sliderCardEl.length - sliderShow ) * sliderCardEl[0].clientWidth;
-    }
-    if (window.innerWidth > 1400 && window.innerWidth < 2400 ) {
-        sliderShow = 4;
-        sliderWidth = (sliderCardEl.length - sliderShow ) * sliderCardEl[0].clientWidth;
-    }
-}
-window.addEventListener("load", resize());
-window.addEventListener("resize", resize());
-
-
-
-
+window.addEventListener("resize", () => {
+  resize();
+});
 
 let sliderConfig = {
   marginRight: 30,
@@ -72,9 +75,6 @@ let sliderConfig = {
 sliderCardEl.forEach((card) => {
   card.style.marginRight = `${sliderConfig.marginRight}px`;
 });
-
-let moveReal = 0;
-let movetoLeft = 0;
 
 const slide = {
   moveToNext() {
@@ -109,56 +109,42 @@ sliderBtn[0].addEventListener("click", () => {
   slide.moveToBack();
 });
 
-
-
 let grabbing = false;
-let positiveNumber = false
-sliderCardEl.forEach((card)=>{
-    card.addEventListener("wheel", (e) => {
-        e.preventDefault();
-        e.deltaY>1? slide.moveToNext():slide.moveToBack();
-    });
-})
-sliderEl.addEventListener("wheel", (e) => {
+let positiveNumber = false;
+sliderCardEl.forEach((card) => {
+  card.addEventListener("wheel", (e) => {
     e.preventDefault();
-    e.deltaY>1? slide.moveToNext():slide.moveToBack();
+    e.deltaY > 1 ? slide.moveToNext() : slide.moveToBack();
+  });
+});
+sliderEl.addEventListener("wheel", (e) => {
+  e.preventDefault();
+  e.deltaY > 1 ? slide.moveToNext() : slide.moveToBack();
 });
 
-
-sliderEl.addEventListener('mousedown',()=>{
-    sliderEl.style.cursor = 'grabbing';
-    grabbing = true;
+sliderEl.addEventListener("mousedown", () => {
+  sliderEl.style.cursor = "grabbing";
+  grabbing = true;
 });
 
-sliderEl.addEventListener('mouseleave',()=>{
-    grabbing = false;
+sliderEl.addEventListener("mouseleave", () => {
+  grabbing = false;
 });
 
-sliderEl.addEventListener('mouseup',()=>{
-    sliderEl.style.cursor = 'grabbing';
-    grabbing = false;
+sliderEl.addEventListener("mouseup", () => {
+  sliderEl.style.cursor = "grabbing";
+  grabbing = false;
 });
 
-
-
-
-sliderEl.addEventListener('mousemove', (e)=>{
-    
-
-
-    if(grabbing==true){
-        if(e.movementX===-1){
-            slide.moveToNext();
-            console.log('next numero é negativo');
-           
-        }
-        if (e.movementX===1) {
-            slide.moveToBack();
-            console.log('next numero é positivo');
-        }
+sliderEl.addEventListener("mousemove", (e) => {
+  if (grabbing == true) {
+    if (e.movementX === -1) {
+      slide.moveToNext();
+      console.log("next numero é negativo");
     }
+    if (e.movementX === 1) {
+      slide.moveToBack();
+      console.log("next numero é positivo");
+    }
+  }
 });
-
-
-
-
